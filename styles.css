@@ -1,0 +1,280 @@
+:root {
+    /* Primary colors */
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+  
+    /* Neutral colors */
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--marine-blue);
+    background-color: var(--magnolia);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    max-width: 940px;
+    width: 100%;
+  }
+  
+  .sidebar {
+    background-image: url('add img');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px 0 0 15px;
+    padding: 40px;
+    width: 274px;
+  }
+  
+  .step-indicator {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .step-number {
+    width: 33px;
+    height: 33px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: var(--white);
+  }
+  
+  .step.active .step-number {
+    background-color: var(--light-blue);
+    color: var(--marine-blue);
+    border-color: var(--light-blue);
+  }
+  
+  .step-info {
+    color: var(--white);
+  }
+  
+  .step-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--pastel-blue);
+  }
+  
+  .step-name {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .form-container {
+    flex: 1;
+    padding: 40px;
+  }
+  
+  h2 {
+    color: var(--marine-blue);
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: var(--cool-gray);
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--marine-blue);
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus {
+    outline: none;
+    border-color: var(--purplish-blue);
+  }
+  
+  .plan-options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .plan {
+    flex: 1;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .plan:hover,
+  .plan.selected {
+    border-color: var(--purplish-blue);
+    background-color: var(--alabaster);
+  }
+  
+  .plan-icon {
+    margin-bottom: 40px;
+  }
+  
+  .plan-info h3 {
+    color: var(--marine-blue);
+    margin-bottom: 5px;
+  }
+  
+  .plan-price {
+    color: var(--cool-gray);
+  }
+  
+  .yearly-offer {
+    color: var(--marine-blue);
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .toggle-label {
+    color: var(--cool-gray);
+    font-weight: 500;
+  }
+  
+  .toggle-label.active {
+    color: var(--marine-blue);
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--marine-blue);
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--marine-blue);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .add-ons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .add-on {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .add-on:hover,
+  .add-on.selected {
+    border-color: var(--purplish-blue);
+    background-color: var(--alabaster);
+  }
+  
+  .add-on input[type="checkbox"] {
+    margin-right: 20px;
+  }
+  
+  .add-on-info {
+    flex: 1;
+  }
+  
+  /* .add-on-info h */
+  /* </ReactProject> */
+  
